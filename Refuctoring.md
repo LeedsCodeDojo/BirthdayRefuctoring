@@ -15,8 +15,9 @@ Anyway, it's good fun.
 
 ### Tips
 
+- Save the original version of your code for comparison
 - Do one refuctoring at a time
 - Always check your tests still pass
 - Think of a good name for your refuctoring
 - Beware the power of renaming
-- Quality beats quantity
+
