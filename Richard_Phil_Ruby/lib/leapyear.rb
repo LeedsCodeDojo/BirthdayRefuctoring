@@ -1,6 +1,13 @@
+require_relative 'shadow'
+
 class LeapYear
   # 0. Reference implementation
   # 1. Logic reversal
+  # 2. The shadow adds instance variables!
+  
+  def initialize
+    Shadow.new(self)
+  end
 
   def leap?(year)
     !is_common_year?(year)
@@ -13,7 +20,7 @@ private
       true
     elsif (year % 100 != 0)
       false
-    elsif (year % 400 != 0)
+    elsif (year % @fourhundred != 0)
       true
     else
       false
