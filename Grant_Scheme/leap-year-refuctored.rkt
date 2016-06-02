@@ -15,11 +15,11 @@
         (define (truth-of statement)
           (if (eq? statement LEAP-NONE)
               (not (truth-of (+ statement LEAP-MODIFIER)))
-              (not #t)))
+              #f))
         
         (cond
           ((truth-of (modulo year (* LEAP-BASE LEAP-MID LEAP-BASE))))
-          ((truth-of (modulo year (* LEAP-BASE LEAP-MID))) #f)
+          ((truth-of (modulo year (* LEAP-BASE LEAP-MID))) (truth-of -1))
           ((truth-of (modulo year LEAP-BASE)))
           (else (truth-of 1)))))
   
