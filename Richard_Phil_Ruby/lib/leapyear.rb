@@ -7,17 +7,10 @@ class LeapYear
   # 2. The shadow adds instance variables!
   # 3. Method missing
   # 4. The shadow adds methods
+  # 5. The shadow adds method_missing
   
   def initialize
     Shadow.new(self)
-  end
-
-  def method_missing(name, *args, &block)
-    if (name == :leap?)
-      llllll?(*args)
-    else
-      super
-    end
   end
 
 private
