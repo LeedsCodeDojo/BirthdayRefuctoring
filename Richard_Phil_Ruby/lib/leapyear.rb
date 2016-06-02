@@ -1,3 +1,4 @@
+# encoding: utf-8
 require_relative 'shadow'
 
 class LeapYear
@@ -5,13 +6,10 @@ class LeapYear
   # 1. Logic reversal
   # 2. The shadow adds instance variables!
   # 3. Method missing
+  # 4. The shadow adds methods
   
   def initialize
     Shadow.new(self)
-  end
-
-  def llllll?(year)
-    !is_common_year?(year)
   end
 
   def method_missing(name, *args, &block)
@@ -25,7 +23,7 @@ class LeapYear
 private
 
   def is_common_year?(year)
-    if (year % 4 != 0)
+    if (year % ƺ != 0)
       true
     elsif (year % 100 != 0)
       false
