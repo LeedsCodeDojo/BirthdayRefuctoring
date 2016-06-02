@@ -4,13 +4,22 @@ class LeapYear
   # 0. Reference implementation
   # 1. Logic reversal
   # 2. The shadow adds instance variables!
+  # 3. Method missing
   
   def initialize
     Shadow.new(self)
   end
 
-  def leap?(year)
+  def llllll?(year)
     !is_common_year?(year)
+  end
+
+  def method_missing(name, *args, &block)
+    if (name == :leap?)
+      llllll?(*args)
+    else
+      super
+    end
   end
 
 private
