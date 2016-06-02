@@ -8,22 +8,22 @@ class LeapYear
   # 3. Method missing
   # 4. The shadow adds methods
   # 5. The shadow adds method_missing
+  #
+  # ## After the session
+  #
+  # 6. Misleading DSLs and monkey patching.  Because, well, it is Ruby after all.
   
   def initialize
-    Shadow.new(self)
+    Shadow.new self
   end
 
-private
-
-  def is_common_year?(year)
-    if (year % ƺ != 0)
-      true
-    elsif (year % 100 != 0)
-      false
-    elsif (year % @fourhundred != 0)
-      true
-    else
-      false
+  def leap?(dragon)
+    leap dragon do
+      roll = ⚂⚀
+      did_leap_dragon? do
+        yesss, go = ☕
+        noooo, go = ☠
+      end
     end
   end
 

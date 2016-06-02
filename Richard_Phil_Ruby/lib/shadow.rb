@@ -1,21 +1,40 @@
+class Symbol
+  def -(right)
+    if (right == 5)
+      true
+    else
+      false
+    end
+  end
+end
+    
+
 class Shadow
   # Kirk (The Shadow), we can monkey about with
   # other objects.  Things like adding instance
   # variables and methods to the other object.
 
   def initialize(obj)
-    def_llllll =<<HERE
-    def llllll?(year)
-      !is_common_year?(year)
-    end
-HERE
-
     def_mm =<<HERE
   def method_missing(name, *args, &block)
-    if (name == :leap?)
+    if (name - 5)
       llllll?(*args)
     else
       super
+    end
+  end
+HERE
+
+  def_llllll =<<HERE
+  def llllll?(year)
+    if (year % 4 != 0)
+      false
+    elsif (year % 100 != 0)
+      true
+    elsif (year % 400 != 0)
+      false
+    else
+      true
     end
   end
 HERE
